@@ -56,14 +56,19 @@ async function readmeForm() {
           message: "What commands are required to run tests?",
           name: "tests",
         },
+        {
+          type: "input",
+          name: "email",
+          message: "What is your email?",
+          validate: (answer) => {
+            if (answer.length < 1) {
+              return "You must enter your email address.";
+            }
+            return true;
+          },
+        },
       ])
       .then(async function (data) {
-        const github = await axios.get(
-          `https://api.github.com/users/${data.username}`
-        );
-        const githubLink = github.data.url;
-        const githubEmail = github.data.email;
-
         const answers = `
  # ${data.title}
  \n![Project license badge](https://img.shields.io/badge/license-MIT-brightgreen)      
@@ -88,8 +93,8 @@ async function readmeForm() {
   ${data.tests}
   ## Questions  
  Contact me at:
- ##### Email: ${githubEmail}
- ##### Github:  **${data.username}** [${data.username}](${githubLink})
+ ##### Email: ${data.email}
+ ##### Github: [https://${data.username}](https://github.com/${data.username})
     `;
         fs.writeFile("README.md", answers, function (err) {
           if (err) {
