@@ -58,19 +58,17 @@ async function readmeForm() {
         },
       ])
       .then(async function (data) {
-        // using axios to take into the github users accountgrabing the name, url
         const github = await axios.get(
           `https://api.github.com/users/${data.username}`
         );
         const githubLink = github.data.url;
         const githubEmail = github.data.email;
-        // making the README file with the users reponses from the cmnd line.
 
         const answers = `
- # ${data.Title}
+ # ${data.title}
  \n![Project license badge](https://img.shields.io/badge/license-MIT-brightgreen)      
   
-  ${data.Description}
+  ${data.description}
 
   # Table of Contents
   * [Installation](#Installation)
@@ -81,25 +79,23 @@ async function readmeForm() {
   * [Questions](#Questions)
   
   ## Installation
-  > ${data.installation}
+${data.installation}
   ## Usage
-  > ${data.usage}
-  ## License
-  ${data.license[0]} license. 
+ ${data.usage}
   ## Contributing
   ${data.contribution}
   ## Tests
   ${data.tests}
   ## Questions  
  Contact me at:
- ##### Email: ${data.email}
- ##### Github:  **${data.username}** [${data.username}](https://github.com/${data.username})
+ ##### Email: ${githubEmail}
+ ##### Github:  **${data.username}** [${data.username}](${githubLink})
     `;
         fs.writeFile("README.md", answers, function (err) {
           if (err) {
             throw err;
           }
-          console.log(`Your README is saved `);
+          console.log(`README.md has been saved.`);
         });
       });
   } catch (err) {
