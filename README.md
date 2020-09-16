@@ -32,6 +32,10 @@ Notable Technologies Used:
 - Inquirer
 - Axios
 
+## License
+
+[MIT](https://github.com/jonnikim/09_ReadMeGenerator/blob/master/LICENSE) | Copyright © 2020 Jonathan Kim
+
 ## Contributing
 
 [Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.md)
