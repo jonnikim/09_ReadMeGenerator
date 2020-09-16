@@ -79,11 +79,11 @@ async function readmeForm() {
   * [Questions](#Questions)
   
   ## Installation
-${data.installation}
+    ${data.installation}
   ## Usage
- ${data.usage}
+  ${data.usage}
   ## Contributing
-  ${data.contribution}
+  ${data.contributing}
   ## Tests
   ${data.tests}
   ## Questions  
