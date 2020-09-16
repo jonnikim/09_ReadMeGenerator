@@ -40,9 +40,9 @@ Notable Technologies Used:
 
 Contact me at:
 
-##### Email: null
+##### Email: jonathan213kim@gmail.com
 
-##### Github: **jonnikim** [jonnikim](https://api.github.com/users/jonnikim)
+##### Github: https://github.com/jonnikim
 
 ##### Porftolio: https://dry-springs-76393.herokuapp.com/
 
